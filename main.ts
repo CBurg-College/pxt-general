@@ -1,18 +1,8 @@
 type handler = () => void
 let displayHandler: handler
-function displayAfterLogo(programmableCode: () => void): void {
-    displayHandler = programmableCode;
+function onDisplay(code: () => void): void {
+    displayHandler = code;
 }
-/*
-In your extention you can have
-'your code' displayed automatically
-after the radio group got changed
-by the onLogoEvent.
-
-    displayAfterLogo(() => {
-        ... your code ...
-    })
-*/
 
 let GROUP = 1
 basic.showNumber(GROUP)
@@ -24,7 +14,7 @@ if (displayHandler) displayHandler()
 //% color="#00CC00" icon="\uf1f9"
 //% block="General"
 //% block.loc.nl="Algemeen"
-namespace CGeneral {
+namespace General {
     //% color="#008800"
     //% block="comment: %dummy"
     //% block.loc.nl="uitleg: %dummy"
