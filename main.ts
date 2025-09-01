@@ -25,7 +25,7 @@ namespace General {
     //% block="wait %sec seconds"
     //% block.loc.nl="wacht %sec seconden"
     export function wait(sec: number) {
-        basic.pause(1000)
+        basic.pause(sec * 1000)
     }
 }
 
